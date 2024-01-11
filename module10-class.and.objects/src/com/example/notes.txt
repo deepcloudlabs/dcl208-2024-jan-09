@@ -1,0 +1,23 @@
+class StandardShapeFactory implements ShapeFactory {
+
+	@Override
+	public Shape makeShape(Object o) {
+		return switch (o) {
+		case Triangle t -> {
+			yield new Triangle();
+		}
+		case Square t -> {
+			yield new Square();
+		}
+		case Rectangle t -> {
+			yield new Rectangle();
+		}
+		case Circle t -> {
+			yield new Circle();
+		}
+		default -> {
+			yield new Circle();
+		}
+		};
+	}
+}
